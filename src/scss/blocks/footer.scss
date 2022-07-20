@@ -1,0 +1,40 @@
+/********************************************************* Footer */
+footer {
+  background: #EEEEEE;
+  padding: 40px 0;
+  margin-top: 100px;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-left {
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+}
+
+.footer-right {
+  font-weight: 400;
+  font-size: 16px;
+  color: #ADADAD;
+  text-align: right;
+  a {
+    color: #ADADAD;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+}

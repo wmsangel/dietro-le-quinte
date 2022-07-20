@@ -1,0 +1,123 @@
+/********************************************************* Contacts */
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__map {
+    width: 50%;
+    padding-right: 40px;
+    padding-top: 35px;
+    filter: grayscale(1);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 35px;
+      right: 0;
+      bottom: 35px;
+      background: url('../img/button-bg.png') no-repeat;
+      background-size: cover;
+      z-index: 1;
+      width: calc(100% - 35px);
+      height: calc(100% - 60px);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 38px;
+      right: 3px;
+      bottom: 38px;
+      background: #fff;
+      z-index: 2;
+      width: calc(100% - 41px);
+      height: calc(100% - 66px);
+    }
+
+    iframe {
+      width: 100%;
+      position: relative;
+      z-index: 3;
+    }
+
+    @media (max-width: 992px) {
+      width: 100%;
+      padding-right: 0;
+      padding-bottom: 40px;
+      padding-top: 0;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+      
+      iframe {
+        height: 40vh;
+      }
+    }
+  }
+
+  &__info {
+    width: 50%;
+    padding-left: 40px;
+
+    @media (max-width: 992px) {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+}
+
+.contact-address {
+  background: url('../img/icons/address.svg') no-repeat left;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  margin-top: 32px;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 60px;
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.contact-phone {
+  background: url('../img/icons/phone-big.svg') no-repeat left;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 60px;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.contact-time {
+  background: url('../img/icons/time.svg') no-repeat left;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 60px;
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}

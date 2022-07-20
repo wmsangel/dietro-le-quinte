@@ -1,0 +1,108 @@
+/********************************************************* Popup */
+.overlay {
+  display: none;
+  background: rgba(33, 33, 33, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.popup {
+  display: none;
+  background: url('../img/popup-bg.png') #fff no-repeat;
+  background-size: cover;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 101;
+  overflow: auto;
+  max-width: 760px;
+  padding: 100px;
+
+  &.popup-form {
+    max-width: 970px;
+  }
+
+  @media (max-width: 992px) {
+    width: calc(100% - 30px);
+    height: 90vh;
+    padding: 30px;
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.popup-form {
+  .order-form {
+    .order-form-row {
+      flex-wrap: wrap;
+    }
+    &__name {
+      width: calc(50% - 40px);
+      margin: 10px 20px;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    &__phone {
+      width: calc(50% - 40px);
+      margin: 10px 20px;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    &__date {
+      width: calc(50% - 40px);
+      margin: 10px 20px;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    &__time {
+      width: calc(25% - 40px);
+      margin: 10px 20px;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    &__count {
+      width: calc(25% - 40px);
+      margin: 10px 20px;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.popup-text {
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 30px 0 50px;
+}
+
+.popup-action {
+  text-align: center;
+  margin: 30px 0 0;
+
+}
