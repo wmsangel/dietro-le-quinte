@@ -1,9 +1,24 @@
 import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 import Swiper, { Navigation, Pagination, EffectFade } from 'swiper';
-const swiper = new Swiper();
 
 $(function (){
+
+
+    // mask
+    $('.js-mask-date').mask('99 | 99 | 99')
+    $('.js-mask-phone').mask('+7(999) 999-9999')
+    $('.js-mask-time').mask('99:99')
+
+    // ship type
+    $('body')
+        .on('click', '.js-ship-type', function (e) {
+            if (e.currentTarget.defaultValue == 'self') {
+                $('.js-ship-block').hide()
+            } else {
+                $('.js-ship-block').show()
+            }
+        })
 
     // hero slider
     if ($('.js-hero-slider').length) {

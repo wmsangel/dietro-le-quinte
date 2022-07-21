@@ -14,7 +14,9 @@
 	"author": "FLS",
 	"license": "ISC",
 	"dependencies": {
-		"gulp-cli": "^2.3.0"
+		"gulp-cli": "^2.3.0",
+		"imask": "^6.4.2",
+		"jquery.maskedinput": "^1.4.1"
 	},
 	"devDependencies": {
 		"browser-sync": "latest",
@@ -42,6 +44,7 @@
 		"gulp-webp-html-nosvg": "latest",
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
+		"inputmask": "^5.0.7",
 		"sass": "latest",
 		"swiper": "^8.3.1",
 		"vinyl-ftp": "latest",
