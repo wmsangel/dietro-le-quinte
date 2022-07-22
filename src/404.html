@@ -114,41 +114,41 @@
 	<div class="popup-content">
 		<div class="page-title is-center">Забронировать стол</div>
 		<div class="title-divider is-center"></div>
-		<form action="">
+		<form action="" class="js-popup-form-order">
 			<div class="order-form">
 				<div class="order-form-row">
 					<div class="order-form__name">
 						<label>Ваше имя</label>
-						<input type="text">
+						<input type="text" class="is-required">
 					</div>
 					<div class="order-form__phone">
 						<label>Ваш телефон</label>
-						<input type="tel" class="js-mask-phone">
+						<input type="tel" class="js-mask-phone is-required is-email">
 					</div>
 					<div class="order-form__date">
 						<label>Дата</label>
-						<input type="text" placeholder="30 | 01 | 22" class="js-mask-date" >
+						<input type="text" placeholder="30 | 01 | 22" class="js-mask-date is-required">
 					</div>
 					<div class="order-form__time">
 						<label>Время</label>
-						<input type="text" placeholder="20:00" class="js-mask-time">
+						<input type="text" placeholder="20:00" class="js-mask-time is-required">
 					</div>
 					<div class="order-form__count">
 						<label>Кол-во гостей</label>
-						<input type="text" placeholder="Не более 10">
+						<input type="text" placeholder="Не более 10" class="is-required">
 					</div>
 				</div>
 				<div class="order-form-row is-center">
 					<div class="order-form__agree">
 						<label>
-							<input type="checkbox">
+							<input type="checkbox" class="js-popup-agree">
 							Я согласен(на) с условиями обработки моих &nbsp;<a href="#">персональных данных</a>
 						</label>
 					</div>
 				</div>
 				<div class="order-form-row is-center">
 					<div class="order-form__btn">
-						<a href="#" class="btn btn-main js-popup" data-popup-id="order-confirm"><span>Забронировать</span></a>
+						<a href="#" class="btn btn-main is-disabled js-popup-order-btn"><span>Забронировать</span></a>
 					</div>
 				</div>
 			</div>

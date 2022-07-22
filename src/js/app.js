@@ -105,6 +105,22 @@ $(function (){
 
     }
 
+    // Agree
+    $('body').on('change', '.js-agree', function (e) {
+        if ($(this).is(':checked')) {
+            $('.js-order-btn').removeClass('is-disabled');
+        } else {
+            $('.js-order-btn').addClass('is-disabled');
+        }
+    })
+    $('body').on('change', '.js-popup-agree', function (e) {
+        if ($(this).is(':checked')) {
+            $('.js-popup-order-btn').removeClass('is-disabled');
+        } else {
+            $('.js-popup-order-btn').addClass('is-disabled');
+        }
+    })
+
     // cards
     if ($('.js-menu-swiper-1').length) {
         $('.js-menu-swiper-1').each(function (e) {
@@ -337,4 +353,87 @@ $(function (){
             e.preventDefault();
             $('.overlay, .js-popup-block').fadeOut();
         })
+
+
+    // Order validation
+    $('body').on('click', '.js-order-btn', function (e) {
+        var validate = true;
+        $('.js-form-order .is-required').each(function (e) {
+            if ($('.js-ship-block').is(':visible')) {
+                if ($(this).hasClass('is-email')) {
+                    if (isEmail($(this).val())) {
+                        $(this).parent('div').addClass('is-field-success');
+                        $(this).parent('div').removeClass('is-field-error');
+                    } else {
+                        $(this).parent('div').addClass('is-field-error');
+                    }
+                } else if ($(this).val() == '') {
+                    validate = false;
+                    $(this).parent('div').addClass('is-field-error');
+                } else {
+                    $(this).parent('div').addClass('is-field-success');
+                    $(this).parent('div').removeClass('is-field-error');
+                }
+            } else {
+                if (!$(this).hasClass('is-ship-required')) {
+                    if ($(this).hasClass('is-email')) {
+                        if (isEmail($(this).val())) {
+                            $(this).parent('div').addClass('is-field-success');
+                            $(this).parent('div').removeClass('is-field-error');
+                        } else {
+                            $(this).parent('div').addClass('is-field-error');
+                        }
+                    } else if ($(this).val() == '') {
+                        validate = false;
+                        $(this).parent('div').addClass('is-field-error');
+                    } else {
+                        $(this).parent('div').addClass('is-field-success');
+                        $(this).parent('div').removeClass('is-field-error');
+                    }
+                }
+            }
+        })
+        if (validate == false) {
+            return false;
+        }
+    })
+
+    $('body').on('click', '.js-popup-order-btn', function (e) {
+        var validatePopup = true;
+        $('.js-popup-form-order .is-required').each(function (e) {
+            if ($('.js-ship-block').is(':visible')) {
+                if ($(this).val() == '') {
+                    validatePopup = false;
+                    $(this).parent('div').addClass('is-field-error');
+                } else {
+                    $(this).parent('div').addClass('is-field-success');
+                    $(this).parent('div').removeClass('is-field-error');
+                }
+            } else {
+                if (!$(this).hasClass('is-ship-required')) {
+                    if ($(this).val() == '') {
+                        validatePopup = false;
+                        $(this).parent('div').addClass('is-field-error');
+                    } else {
+                        $(this).parent('div').addClass('is-field-success');
+                        $(this).parent('div').removeClass('is-field-error');
+                    }
+                }
+            }
+        })
+        if (validatePopup == false) {
+            return false;
+        } else {
+            let popupID = 'order-confirm';
+            $('.overlay, .js-popup-block').hide();
+            $('.overlay, .js-popup-block[data-popup-id="'+popupID+'"]').fadeIn();
+        }
+    })
+
+
+    // Email Validation
+    function isEmail(email) {
+        var EmailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return EmailRegex.test(email);
+    }
 })

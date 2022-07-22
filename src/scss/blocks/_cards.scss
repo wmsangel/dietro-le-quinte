@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 60px;
+  position: relative;
   &__items {
     display: flex;
     overflow-x: auto;
@@ -101,6 +102,31 @@
       }
     }
   }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    background: rgb(255,255,255);
+    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+  }
+
 }
 
 .tab-content {

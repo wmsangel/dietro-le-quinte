@@ -169,19 +169,19 @@
 		<div class="page-title is-center">Оформление заказа</div>
 		<div class="title-divider is-center"></div>
 
-		<form action="">
+		<form action="" class="js-form-order">
 			<div class="checkout-form-row has-bottom-sep">
 				<div class="checkout-field is-2-col">
 					<label>Ваше имя <span class="req">*</span></label>
-					<input type="text">
+					<input type="text" class="is-required">
 				</div>
 				<div class="checkout-field is-2-col">
 					<label>Ваш телефон <span class="req">*</span></label>
-					<input type="text">
+					<input type="tel" class="js-mask-phone is-required">
 				</div>
 				<div class="checkout-field is-2-col">
 					<label>Ваш e-mail <span class="req">*</span></label>
-					<input type="text">
+					<input type="text" class="is-required is-email">
 				</div>
 				<div class="checkout-field ship-field is-2-col row-flex">
 					<div class="radio">
@@ -199,13 +199,13 @@
 
 			<div class="checkout-form-row has-bottom-sep js-ship-block">
 				<div class="checkout-field is-4-col row-flex clear-margin">
-					<div class="checkout-field is-4-col is-field-error">
+					<div class="checkout-field is-4-col">
 						<label>Улица <span class="req">*</span></label>
-						<input type="text">
+						<input type="text" class="is-required is-ship-required">
 					</div>
-					<div class="checkout-field is-2-col is-field-success">
+					<div class="checkout-field is-2-col">
 						<label>Дом <span class="req">*</span></label>
-						<input type="text">
+						<input type="text" class="is-required is-ship-required">
 					</div>
 					<div class="checkout-field is-2-col">
 						<label>Корпус</label>
@@ -259,21 +259,19 @@
 		</div>
 
 		<div class="checkout-action">
-			<a href="order-thanks.html" class="btn btn-main" ><span>Оформить заказ</span></a>
+			<a href="order-thanks.html" class="btn btn-main is-disabled js-order-btn" ><span>Оформить заказ</span></a>
 		</div>
 
 		<div class="checkout-form__agree">
 			<div class="checkbox">
 				<label>
-					<input type="checkbox">
+					<input type="checkbox" class="js-agree">
 					Я согласен(на) с условиями обработки моих &nbsp;<a href="#">персональных данных</a>
 				</label>
 			</div>
 
 			<p class="text-center">Подробнее про доставку можно узнать <a href="#">здесь</a></p>
 		</div>
-
-
 	</div>
 </section>
 
@@ -303,41 +301,41 @@
 	<div class="popup-content">
 		<div class="page-title is-center">Забронировать стол</div>
 		<div class="title-divider is-center"></div>
-		<form action="">
+		<form action="" class="js-popup-form-order">
 			<div class="order-form">
 				<div class="order-form-row">
 					<div class="order-form__name">
 						<label>Ваше имя</label>
-						<input type="text">
+						<input type="text" class="is-required">
 					</div>
 					<div class="order-form__phone">
 						<label>Ваш телефон</label>
-						<input type="tel" class="js-mask-phone">
+						<input type="tel" class="js-mask-phone is-required is-email">
 					</div>
 					<div class="order-form__date">
 						<label>Дата</label>
-						<input type="text" placeholder="30 | 01 | 22" class="js-mask-date" >
+						<input type="text" placeholder="30 | 01 | 22" class="js-mask-date is-required">
 					</div>
 					<div class="order-form__time">
 						<label>Время</label>
-						<input type="text" placeholder="20:00" class="js-mask-time">
+						<input type="text" placeholder="20:00" class="js-mask-time is-required">
 					</div>
 					<div class="order-form__count">
 						<label>Кол-во гостей</label>
-						<input type="text" placeholder="Не более 10">
+						<input type="text" placeholder="Не более 10" class="is-required">
 					</div>
 				</div>
 				<div class="order-form-row is-center">
 					<div class="order-form__agree">
 						<label>
-							<input type="checkbox">
+							<input type="checkbox" class="js-popup-agree">
 							Я согласен(на) с условиями обработки моих &nbsp;<a href="#">персональных данных</a>
 						</label>
 					</div>
 				</div>
 				<div class="order-form-row is-center">
 					<div class="order-form__btn">
-						<a href="#" class="btn btn-main js-popup" data-popup-id="order-confirm"><span>Забронировать</span></a>
+						<a href="#" class="btn btn-main is-disabled js-popup-order-btn"><span>Забронировать</span></a>
 					</div>
 				</div>
 			</div>
